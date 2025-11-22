@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+/* Custom scrollbar styles */
+.custom_scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background: #2a2b67;
+  border-radius: 10px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1a1b47;
+}
