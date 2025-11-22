@@ -1,0 +1,74 @@
+# Provider configs (STT/LLM/TTS)
+
+stt:
+  provider: deepgram
+  api_key: ${DEEPGRAM_API_KEY}
+  # Cost configuration (in USD)
+  cost_per_minute: 0.006  # $0.6 cents per minute
+
+llm:
+  provider: azure
+  api_key: ${AZURE_OPENAI_API_KEY}
+  model: gpt-4o-mini
+  azure_endpoint: ${AZURE_OPENAI_ENDPOINT}
+  api_version: ${AZURE_GPT_4O_MINI_API_VERSION}
+  deployment: ${AZURE_GPT_4O_MINI_DEPLOYMENT}
+  # Cost configuration (in USD)
+  input_cost_per_token: 0.00000015  # $0.15 per million input tokens
+  output_cost_per_token: 0.00000060  # $0.60 per million output tokens
+  
+tts:
+  provider: elevenlabs
+  api_key: ${ELEVENLABS_API_KEY}
+  voice_id: ${ELEVENLABS_VOICE_ID}
+  # Cost configuration (in USD)
+  cost_per_character: 0.00022  # $0.022 cents per character
+
+# interview:
+#   default_question_mode: "predefined"  # Switch this to "dynamic"
+#   predefined_questions: 5
+#   dynamic_max_questions: 10
+#   context_summarization: true
+
+storage:
+  storage_type: s3  # "local" or "s3"
+  storage_path: app/cache/storage  # Relative to backend directory, or absolute path
+  bucket_name : ${BUCKET_NAME}
+  region_name : ${AWS_REGION_NAME}
+  s3_access_key : ${AWS_ACCESS_KEY}
+  s3_secret_key : ${AWS_SECRET_KEY}
+
+# Frontend configuration
+frontend:
+  # Base URL for frontend (used in email invites sent to candidates)
+  # You can set this directly or use ${FRONTEND_BASE_URL} to read from environment variable
+  # Examples:
+  #   base_url: http://192.168.0.70:5173  (for local network access)
+  #   base_url: http://localhost:5173     (for local development)
+  #   base_url: https://yourdomain.com    (for production)
+  #   base_url: ${FRONTEND_BASE_URL}      (read from environment variable)
+  base_url: http://192.168.0.70:5173
+
+SMTP:
+  email: ${SMTP_FROM}
+  host: ${SMTP_HOST}
+  port: ${SMTP_PORT}
+  user: ${SMTP_USER}
+  password: ${SMTP_PASSWORD}
+
+sample_file:
+  bucket_name : ${BUCKET_NAME}
+  folder_name : ${FOLDER_NAME}
+  file_name : ${FILE_NAME}
+
+jwt:
+  secret_key: ${JWT_SECRET}
+  refresh_secret_key: ${JWT_REFRESH_SECRET}
+  algorithm: ${JWT_ALGORITHM}
+  access_token_expires_in: ${JWT_EXPIRE_SECONDS}
+  refresh_token_expires_in: ${JWT_REFRESH_EXPIRE_DAYS}
+
+
+
+
+
