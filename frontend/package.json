@@ -24,7 +24,7 @@
     "@emotion/styled": "11.11.0",
     "@reduxjs/toolkit": "1.9.5",
     "@szhsin/react-menu": "4.0.2",
-    "axios": "1.4.0",
+    "axios": "1.13.2",
     "chart.js": "^4.5.1",
     "date-fns": "2.30.0",
     "framer-motion": "10.12.16",
